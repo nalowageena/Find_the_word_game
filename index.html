@@ -1,0 +1,86 @@
+<!-- creating a hangman game with html, css and js -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="//use.fontawesome.com/releases/v5.0.7/css/all.css"
+    />
+    <title>Hangman</title>
+  </head>
+  <body>
+    <h1>Hangman</h1>
+
+    <h2>Find the secret word</h2>
+    <div class="lives">
+      <!-- use fonaawesome to display 06 red hearts  -->
+      <span style="color: #000">Lives: </span>
+      <i class="fa fa-heart"></i>
+      <i class="fa fa-heart"></i>
+      <i class="fa fa-heart"></i>
+      <i class="fa fa-heart"></i>
+      <i class="fa fa-heart"></i>
+      <i class="fa fa-heart"></i>
+    </div>
+    <div class="word">
+      <input
+        type="text"
+        name="letter"
+        id="letter"
+        class="letter"
+        maxlength="1"
+      />
+      <div class="dash"></div>
+    </div>
+    <div class="keyboard">
+      <!-- should contain all keys with capital letters. -->
+      <!-- a min of wordlength + 3 letters are displayed -->
+
+      <button class="key"></button>
+      <button class="key">Q</button>
+      <button class="key">W</button>
+      <button class="key">E</button>
+      <button class="key">R</button>
+      <button class="key">T</button>
+      <button class="key">Y</button>
+      <button class="key">U</button>
+      <button class="key">I</button>
+      <button class="key">O</button>
+      <button class="key">P</button>
+      <button class="key"></button>
+      <button class="key"></button>
+      <button class="key">A</button>
+      <button class="key">S</button>
+      <button class="key">D</button>
+      <button class="key">F</button>
+      <button class="key">G</button>
+      <button class="key">H</button>
+      <button class="key">J</button>
+      <button class="key">K</button>
+      <button class="key">L</button>
+      <button class="key"></button>
+      <button class="key"></button>
+      <button class="key"></button>
+      <button class="key"></button>
+      <button class="key">Z</button>
+      <button class="key">X</button>
+      <button class="key">C</button>
+      <button class="key">V</button>
+      <button class="key">B</button>
+      <button class="key">N</button>
+      <button class="key">M</button>
+      <button class="key"></button>
+      <button class="key tab">
+        <i class="fas fa-arrow-left"></i>
+      </button>
+    </div>
+
+    <!-- javascript -->
+    <script type="module" src="app.js"></script>
+    <script type="module" src="words.js"></script>
+  </body>
+</html>
