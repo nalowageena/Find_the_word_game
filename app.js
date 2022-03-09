@@ -22,14 +22,22 @@ function disableBtns(keys) {
   });
 }
 disableBtns(keys);
-
+let inputs = document.querySelector('.letter');
+let alphabets = 'abcdefghijklmnopqrstuvwxyz'.toUpperCase();
 function writeChar(key) {
   // on click key, writes char in input text
+  key.addEventListener('click', function () {
+    if (alphabets.includes(key.innerHTML) && inputs.value == '') {
+      inputs.value = key.innerHTML;
+      console.log(inputs.value);
+    }
+    if (key.classList.contains('backspace')) {
+      inputs.value = '';
+    }
+  });
   // check that letter is valid
 }
-keys.forEach(function (key) {
-  key.addEventListener('click', writeChar);
-});
+keys.forEach(writeChar);
 
 function compareWord() {
   // compare the word with the  secret word
