@@ -1,14 +1,31 @@
 import { words } from './words.js';
 let word = '';
+
+let keys = document.querySelectorAll('.key');
+
+let letter = document.querySelector('.letter');
+let alphabets = 'abcdefghijklmnopqrstuvwxyz'.toUpperCase();
+
 function findWord() {
   // computer choses secret word
   do {
     word = words[Math.floor(Math.random() * words.length)];
   } while (word.includes('-'));
-  console.log(word);
+  return word;
 }
-findWord();
-let keys = document.querySelectorAll('.key');
+word = findWord();
+console.log(word);
+
+function createInput(word) {
+  let input = document.querySelector('.input');
+  let clonedInput;
+  for (let i = 0; i < word.length - 1; i++) {
+    clonedInput = input.cloneNode(true);
+    document.getElementById('word').appendChild(clonedInput);
+  }
+}
+createInput(word);
+
 function disableBtns(keys) {
   // disables keys
 
@@ -22,17 +39,16 @@ function disableBtns(keys) {
   });
 }
 disableBtns(keys);
-let inputs = document.querySelector('.letter');
-let alphabets = 'abcdefghijklmnopqrstuvwxyz'.toUpperCase();
+
 function writeChar(key) {
   // on click key, writes char in input text
   key.addEventListener('click', function () {
-    if (alphabets.includes(key.innerHTML) && inputs.value == '') {
-      inputs.value = key.innerHTML;
-      console.log(inputs.value);
+    if (alphabets.includes(key.innerHTML) && letter.value == '') {
+      letter.value = key.innerHTML;
+      console.log(letter.value);
     }
     if (key.classList.contains('backspace')) {
-      inputs.value = '';
+      letter.value = '';
     }
   });
   // check that letter is valid

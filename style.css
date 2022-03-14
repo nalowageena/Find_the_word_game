@@ -21,11 +21,12 @@ h2 {
   grid-area: lives;
   text-align: left;
 }
-.word {
-  margin: 8rem;
-  padding: 2em;
+
+.input {
+  /* margin: 8rem;
+  padding: 2em; */
   color: darkorchid;
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
 }
 .letter {
