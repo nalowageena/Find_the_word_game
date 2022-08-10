@@ -23,11 +23,3 @@ h2{
     font-weight: 300;
     font-size: 1.3rem;
 }
-main div a {
-    text-decoration: none;
-    color: white;
-    background-color: green;
-    padding: 10px;
-    display: block;
-    margin-top: 10px;
-}
