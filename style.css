@@ -1,72 +1,62 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-body {
-  height: 100%;
-  width: 100%;
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center; */
-  text-align: center;
-  --main-color: #9932cc;
-}
-h2 {
-  grid-area: header;
-}
-.lives {
-  color: red;
-  grid-area: lives;
-  text-align: left;
+:root, html{
+    --color-1: #3A015C;
+    --color-2: #32004F;
+    --color-3: #220135;
+    --color-4: #190028;
+    --color-5: #11001C;
 }
 
-.input {
-  /* margin: 8rem;
-  padding: 2em; */
-  color: darkorchid;
-  display: inline-flex;
-  flex-direction: column;
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
-.letter {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-weight: 700;
-  line-height: 3rem;
-  font-size: 3rem;
-  width: 3rem;
-  text-transform: capitalize;
-  color: var(--main-color);
-  outline: none;
-  border: transparent;
+html, body{
+    height: 100%;
 }
-.dash {
-  height: 2px;
-  width: 2.3rem;
-  background-color: var(--main-color);
-  margin: 2px;
+
+body{
+    background-color: black;
+    color: white;
+    display: grid;
+    grid-template-areas: 'header'
+    'main'
+    'footer';
+    grid-template-rows: 68px auto 40px;
 }
-.keyboard {
-  display: grid;
-  /* flex-wrap: wrap;
-    justify-content: space-around; */
-  grid-template-columns: repeat(12, 2.2rem);
-  width: 80%;
-  grid-gap: 2px;
-  margin: auto;
+body.light-mode{
+    background-color: white;
+    color: black;
 }
-.key {
-  height: 2rem;
-  width: 2rem;
-  border: 2px var(--main-color) solid;
-  background-color: transparent;
-  border-radius: 2px;
+header{
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    font-size: 2rem;
+    padding: 10px;
 }
-.key:hover {
-  background-color: var(--main-color);
-  color: #fff;
-  font-weight: 900;
+header i.fa-moon{
+    padding: 5px;
+    color: var(--color-1);
 }
-.tab {
-  width: 3.5rem;
+header i.fa-sun{
+    color: var(--color-1);
+}
+.game-name{
+    font-family: 'Oleo Script Swash Caps', cursive;
+}
+.game-name::first-letter{
+    font-size: 2.5rem;
+}
+main{
+    grid-area: main;
+    justify-self: center;
+}
+footer{
+    grid-area: footer;
+    align-self: flex-end;
+    justify-self: center;
+}
+i.fa-heart{
+    color: red;
 }

@@ -1,0 +1,33 @@
+main{
+    display: flex;
+    align-items: center;
+}
+main div{
+    padding: 10px;
+    border: 2px solid var(--color-1);
+    max-width: 90%;
+    margin: auto;
+    text-align: center;
+}
+h1{
+    font-family: 'Oswald', sans-serif;
+}
+h1 span{
+    font-size: larger;
+    font-weight: 400;
+    display: block;
+}
+h2{
+    font-family: 'Oswald', sans-serif;
+    margin-top: 20px;
+    font-weight: 300;
+    font-size: 1.3rem;
+}
+main div a {
+    text-decoration: none;
+    color: white;
+    background-color: green;
+    padding: 10px;
+    display: block;
+    margin-top: 10px;
+}
