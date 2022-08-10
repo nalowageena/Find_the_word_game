@@ -1,94 +1,62 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+:root, html{
+    --color-1: #3A015C;
+    --color-2: #32004F;
+    --color-3: #220135;
+    --color-4: #190028;
+    --color-5: #11001C;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 html, body{
-  height: 100vh;
+    height: 100%;
 }
 
-body {
-  /* background-color: #4158D0;
-  background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%); */
-  display: flex;
-  flex-direction: column;
-  /* justify-content: space-around; */
-  align-content: center; 
-  text-align: center;
-  --main-color: #9932cc;
+body{
+    background-color: black;
+    color: white;
+    display: grid;
+    grid-template-areas: 'header'
+    'main'
+    'footer';
+    grid-template-rows: 68px auto 40px;
+}
+body.light-mode{
+    background-color: white;
+    color: black;
+}
+header{
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    font-size: 2rem;
+    padding: 10px;
+}
+header i.fa-moon{
+    padding: 5px;
+    color: var(--color-1);
+}
+header i.fa-sun{
+    color: var(--color-1);
+}
+.game-name{
+    font-family: 'Oleo Script Swash Caps', cursive;
+}
+.game-name::first-letter{
+    font-size: 2.5rem;
 }
 main{
-  flex: 1;
-  display: grid;
-  grid-template-areas:
-  'lives'
-  'word'
-  'keyboard';
-  grid-template-rows: max-content ;
+    grid-area: main;
+    justify-self: center;
 }
-
-.lives {
-  color: red;
-  grid-area: lives;
-  text-align: right;
+footer{
+    grid-area: footer;
+    align-self: flex-end;
+    justify-self: center;
 }
-.word-input{
-  grid-area: word;
-}
-
-.input {
-  color: darkorchid;
-  display: inline-flex;
-  flex-direction: column;
-}
-.letter {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-weight: 700;
-  line-height: 3rem;
-  font-size: 3rem;
-  width: 3rem;
-  text-transform: capitalize;
-  color: var(--main-color);
-  outline: none;
-  border: transparent;
-  background-color: transparent;
-}
-.dash {
-  height: 2px;
-  width: 2.3rem;
-  background-color: var(--main-color);
-  margin: 2px;
-}
-.keyboard {
-  grid-area: keyboard;
-  display: grid;
-  grid-template-columns: repeat(12, 2.2rem);
-  grid-template-rows: repeat(3, 4.4rem);
-  margin: auto auto 0 auto;
-}
-.key {
-  height: auto;
-  width: auto;
-  border: 2px var(--main-color) solid;
-  background-color: transparent;
-  border-radius: 2px;
-}
-.key:hover {
-  background-color: var(--main-color);
-  color: #fff;
-  font-weight: 900;
-}
-.tab {
-  width: 3.5rem;
-}
-.check{
-  padding: 20px;
-  margin-top: 10px;
-  background-color: var(--main-color);
-  color: #fff;
-  border: none;
-  border-radius: 60%;
-}
-.check:hover{
-  background-color: rgba(153, 50, 204, 0.7);
+i.fa-heart{
+    color: red;
 }

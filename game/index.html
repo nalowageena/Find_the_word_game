@@ -5,12 +5,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="./style.css" />
     <link
       rel="stylesheet"
       href="//use.fontawesome.com/releases/v5.0.7/css/all.css"
     />
-    <title>Find the word</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=BhuTuka+Expanded+One&family=Oleo+Script+Swash+Caps:wght@400;700&family=Oswald:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>WORDBIE</title>
   </head>
   <body>
     <h1>Find the secret word</h1>
@@ -18,34 +27,23 @@
     <main>
       <div class="lives">
         <!-- use fontawesome to display 06 red hearts  -->
-        <span style="color: #000">Lives: </span>
-        <i class="fa fa-heart"></i>
-        <i class="fa fa-heart"></i>
-        <i class="fa fa-heart"></i>
-        <i class="fa fa-heart"></i>
-        <i class="fa fa-heart"></i>
-        <i class="fa fa-heart"></i>
+        <p>Points: <span class="points">0</span></p>
+        <p>
+          <span style="color: #000">Lives: </span>
+          <i class="fa fa-heart"></i>
+          <i class="fa fa-heart"></i>
+          <i class="fa fa-heart"></i>
+        </p>
       </div>
-      <form action="">
-        <div id="word" class="word-input">
-          <div class="input">
-            <input
-              type="text"
-              name="letter"
-              id="letter"
-              class="letter"
-              maxlength="1"
-            />
-            <div class="dash"></div>
-          </div>
-        </div>
-        <button class="check">Check</button>
+      <form action="" id="word" class="word-input">
+        <input type="text" name="letter" class="word" maxlength="20" />
+        <input type="button" value="Check" class="check" />
       </form>
 
       <div class="keyboard">
         <!-- should contain all keys with capital letters. -->
         <!-- a min of wordlength + 3 letters are displayed -->
-  
+
         <button class="key"></button>
         <button class="key">Q</button>
         <button class="key">W</button>
