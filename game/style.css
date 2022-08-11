@@ -1,9 +1,54 @@
-.lives{
-    border: 2px solid var(--color-1);
+.lives {
+  border: 2px solid var(--color-1);
 }
-.word{
-    text-transform: uppercase;
+.word {
+  text-transform: uppercase;
 }
-.fa-heart.lost{
-    color: blue;
+.fa-heart.lost {
+  color: blue;
+}
+
+.modal {
+  display: none;
+  flex-direction: column;
+  max-width: 90%;
+  padding: 15px;
+  margin: auto;
+  z-index: 1000;
+  box-shadow: 0px 1px 2px 0px rgba(255, 0, 255, 0.7),
+    0px -1px 2px 0px rgba(255, 0, 255, 0.7),
+    1px 2px 4px 0px rgba(255, 0, 255, 0.7),
+    2px 4px 8px 0px rgba(255, 0, 255, 0.7),
+    -1px -2px 4px 0px rgba(255, 0, 255, 0.7),
+    -2px -4px 8px 0px rgba(255, 0, 255, 0.7);
+  border-radius: 8px;
+
+  text-align: center;
+  font-family: Oswald;
+}
+
+.modal h1 {
+  font-size: 32px;
+  color: var(--color-0);
+}
+.modal h2 {
+  font-weight: 300;
+}
+.modal h2 span {
+  color: var(--color-0);
+  text-transform: uppercase;
+}
+.modal div {
+  display: flex;
+  justify-content: space-around;
+  padding: 5px;
+}
+.modal div p {
+  font-size: 30px;
+}
+.gold {
+  color: gold;
+}
+.modal.show {
+  display: flex;
 }

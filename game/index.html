@@ -30,7 +30,8 @@
     <main>
       <div class="lives">
         <!-- use fontawesome to display 06 red hearts  -->
-        <p>Points: <span class="points">0</span></p>
+        <p><i class="fa-solid fa-coins silver"></i> <span class="points">0</span></p>
+        <p><i class="fa-solid fa-coins gold"></i> <span>0</span></p>
         <p>
           <span>Lives: </span>
           <i class="fa-solid fa-heart life"></i>
@@ -53,6 +54,16 @@
 
           <button type="button"><i class="fa-solid fa-lightbulb"></i></button>
         </div>
+      </div>
+      <div class="modal">
+        <h1>You lost!!</h1>
+        <h2>The secret word was <span class="secret-word"></span></h2>
+        <div>
+          <p><i class="fa-solid fa-coins gold"></i> <span class="points">0</span></p>
+        <p><i class="fa-solid fa-star gold"></i> <span>0</span></p>
+        </div>
+        <button class="btn restart">Restart Game</button>
+        <a href="../welcome/welcome.html" class="btn">Welcome page</a>
       </div>
     </main>
 
