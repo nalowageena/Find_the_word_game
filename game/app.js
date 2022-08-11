@@ -4,6 +4,7 @@ let word = '';
 let word_space = document.querySelector('.word');
 let check = document.querySelector('.check');
 let points = document.querySelectorAll('.points');
+let stars = document.querySelectorAll('.stars');
 
 let lives = document.querySelectorAll('.life');
 let livesArray = Array.from(lives);
@@ -26,23 +27,37 @@ console.log(word);
 function newWord() {
   setTimeout(function () {
     check.innerHTML = '<i class="fa-solid fa-question"></i>';
+    word_space.classList.remove('border-red', 'border-green');
+    check.classList.remove('button-red', 'button-green');
     word_space.value = "";
-  }, 3000);
+  }, 2000);
 }
 
+
+var noPoints = 0;
 function compareWord() {
   // compare the word with the  secret word
   // return a boolean
-  if(word_space.value == word){
+  if (word_space.value == word) {
     points.forEach(function (point) {
-      point.textContent = parseInt(point.textContent) + 10; 
+      point.textContent = parseInt(point.textContent) + 10;
+      noPoints = parseInt(point.textContent);
     });
-    check.innerHTML = '<i class="fa-solid fa-check"></i>';
+    if (noPoints % 100 === 0) {
+      stars.forEach(function (star) {
+        star.textContent = parseInt(star.textContent) + 1;
+      });
+    }
+  check.innerHTML = '<i class="fa-solid fa-check"></i>';
+  word_space.classList.add('border-green');
+  check.classList.add('button-green');
     word = findWord();
     console.log(word);
   }
   else {
     check.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+    word_space.classList.add('border-red');
+    check.classList.add('button-red');
     manageLives();
   }
   newWord();
@@ -56,8 +71,8 @@ function manageLives() {
   // color of live changes to grey
   // if lives = 0, gameover()
   console.log(count);
-  
-  if (count>=0 && !livesArray[count].classList.contains("blue")) {
+
+  if (count >= 0) {
     livesArray[count].classList.add("lost");
     count--;
   }
@@ -75,4 +90,4 @@ function gameOver() {
 
 restart.addEventListener('click', function () {
   location.reload();
-})
+});

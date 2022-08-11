@@ -1,17 +1,72 @@
+main{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+main h1, .definition, .word{
+    margin: 20px 0;
+    padding: 5px;
+}
+.word{
+    height: 50px;
+    font-size: 20px;
+    border: 2px solid var(--color-0);
+    outline-color: var(--color-0);
+    outline-offset: 1px;
+    font-weight: 600;
+}
+.border-green{
+    border: 2px solid #74c69d;
+}
+.border-red{
+    border: 2px solid #f25c54;
+}
+.check{
+  color: blue;
+  background-color: aqua;
+}
+.hint{
+  color: yellow;
+  background-color: blueviolet;
+}
+.button-green{
+  background-color: #74c69d;
+}
+.button-red{
+  background-color: #f25c54;
+}
+
 .lives {
   border: 2px solid var(--color-1);
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
 }
 .word {
   text-transform: uppercase;
 }
 .fa-heart.lost {
-  color: blue;
+  color: gray;
 }
 
-.modal {
-  display: none;
+.modal{
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  margin-top: 68px;
+}
+
+.modal-content {
   flex-direction: column;
-  max-width: 90%;
+  min-width: 90%;
   padding: 15px;
   margin: auto;
   z-index: 1000;
@@ -27,28 +82,47 @@
   font-family: Oswald;
 }
 
-.modal h1 {
+.modal-content h1 {
   font-size: 32px;
   color: var(--color-0);
 }
-.modal h2 {
+.modal-content h2 {
   font-weight: 300;
 }
-.modal h2 span {
+.modal-content h2 span {
   color: var(--color-0);
   text-transform: uppercase;
 }
-.modal div {
+.modal-content div {
   display: flex;
   justify-content: space-around;
   padding: 5px;
 }
-.modal div p {
+.modal-content div p {
   font-size: 30px;
 }
 .gold {
   color: gold;
 }
-.modal.show {
+.link{
+    max-width: fit-content;
+    margin: 20px auto;
+    font-size: 14px;
+}
+.show {
   display: flex;
+}
+.tools{
+    font-size: 20px;
+    padding: 10px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+.restart{
+  outline: none;
+  border: none;
 }

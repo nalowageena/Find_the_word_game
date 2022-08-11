@@ -25,46 +25,55 @@
   <body>
     <header>
       <p class="game-name">Wordbie</p>
-      <i class="fa-solid fa-moon" id="toggle-dark"></i>
+      <button type="button" id="toggle-dark">
+        <i class="fa-solid fa-moon" ></i>
+      </button>
     </header>
     <main>
       <div class="lives">
         <!-- use fontawesome to display 06 red hearts  -->
-        <p><i class="fa-solid fa-coins silver"></i> <span class="points">0</span></p>
-        <p><i class="fa-solid fa-coins gold"></i> <span>0</span></p>
         <p>
           <span>Lives: </span>
           <i class="fa-solid fa-heart life"></i>
           <i class="fa-solid fa-heart life"></i>
           <i class="fa-solid fa-heart life"></i>
         </p>
+        <div>
+          <p><i class="fa-solid fa-coins gold"></i> <span class="points">0</span></p>
+        <p><i class="fa-solid fa-star gold"></i> <span class = "stars">0</span></p>
+        </div>
+        
       </div>
       <h1>Find the secret word</h1>
 
-      <p>
-        A word game where you find a secret word based on several hints which
-        have been given.
+      <p class="definition">
+        A word game meant strictly for adventurers!
       </p>
       <div class="word-input">
         <input type="text" name="word" class="word" maxlength="20" />
         <div>
-          <button type="button" class="check">
+          <button type="button" class="check tools">
             <i class="fa-solid fa-question"></i>
           </button>
 
-          <button type="button"><i class="fa-solid fa-lightbulb"></i></button>
+          <button type="button" class="hint tools"><i class="fa-solid fa-lightbulb"></i></button>
         </div>
       </div>
       <div class="modal">
-        <h1>You lost!!</h1>
-        <h2>The secret word was <span class="secret-word"></span></h2>
-        <div>
-          <p><i class="fa-solid fa-coins gold"></i> <span class="points">0</span></p>
-        <p><i class="fa-solid fa-star gold"></i> <span>0</span></p>
+        <div class="modal-content">
+          <h1>You lost!!</h1>
+          <h2>The secret word was <span class="secret-word"></span></h2>
+          <div>
+            <p><i class="fa-solid fa-coins gold"></i> <span class="points">0</span></p>
+          <p><i class="fa-solid fa-star gold"></i> <span class = "stars">0</span></p>
+          </div>
+          <div>
+            <button class="btn restart link">Restart Game</button>
+          <a href="../welcome/welcome.html" class="btn link">Back to welcome page</a>
+          </div>
         </div>
-        <button class="btn restart">Restart Game</button>
-        <a href="../welcome/welcome.html" class="btn">Welcome page</a>
       </div>
+      <a href="../welcome/welcome.html" class="btn link" >Back to welcome page</a>
     </main>
 
     <footer>

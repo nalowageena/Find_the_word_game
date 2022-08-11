@@ -24,8 +24,13 @@ body{
     'main'
     'footer';
     grid-template-rows: 68px auto 40px;
+    font-family: Oswald;
 }
-body.light-mode{
+.modal-content{
+    background-color: black;
+    color: white;
+}
+.light-mode{
     background-color: white;
     color: black;
 }
@@ -52,6 +57,14 @@ header i.fa-sun{
 main{
     grid-area: main;
     justify-self: center;
+    padding: 10px;
+}
+#toggle-dark{
+    background-color: transparent;
+    outline: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
 }
 .btn{
     text-align: center;
@@ -66,7 +79,7 @@ footer{
     grid-area: footer;
     align-self: flex-end;
     justify-self: center;
-    padding-bottom: 10px; 
+    padding: 10px; 
 }
 footer span{
     color: var(--color-0);
