@@ -51,7 +51,6 @@ function loadDefinition() {
 
 function newWord() {
   word = findWord();
-  console.log(word);
   loadDefinition();
 }
 
@@ -142,12 +141,12 @@ do {
 
 function hint1() {
   let randomHint = word[i-1];
-  hintStmt.innerHTML = 'The letter ' + i + ' of the secret word is <span class="secret-word">'+ randomHint+ '</span>'; 
+  hintStmt.innerHTML = 'Letter ' + i + ' of the secret word is <span class="secret-word">'+ randomHint+ '</span>'; 
 }
 hint1();
 function hint2() {
   let randomHint = word[j-1];
-  hintStmt.innerHTML = 'The letter ' + j + ' of the secret word is <span class="secret-word">'+ randomHint+ '</span>'; 
+  hintStmt.innerHTML = 'Letter ' + j + ' of the secret word is <span class="secret-word">'+ randomHint+ '</span>'; 
 }
 
 const left = document.querySelector('.left');

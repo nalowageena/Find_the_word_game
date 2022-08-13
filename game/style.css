@@ -130,3 +130,13 @@ main h1, .definition, .word{
   outline: none;
   border: none;
 }
+
+.left, .right{
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  background-color: gold;
+  padding: 10px;
+}
