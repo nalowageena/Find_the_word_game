@@ -15,7 +15,7 @@ const hintModal = document.querySelector('.hintModal')
 
 const secretWord = document.querySelector('.secret-word');
 
-const restart = document.querySelector('.restart');
+const restart = document.querySelectorAll('.restart');
 
 const hint = document.querySelector('.hint');
 
@@ -28,7 +28,7 @@ function findWord() {
   return word;
 }
 
-const definition = document.querySelector('.definition');
+const definition = document.querySelectorAll('.definition');
 let definitions;
 
 function loadDefinition() {
@@ -41,7 +41,9 @@ function loadDefinition() {
     var data = JSON.parse(this.response);
     if (request.status >= 200 && request.status < 400) {
       definitions = data[0].meanings[0].definitions;
-      definition.textContent = definitions[getRandomInt(definitions.length)].definition;
+      definition.forEach(function (def) {
+        def.textContent = definitions[getRandomInt(definitions.length)].definition;
+      });
     } else {
       console.log('error');
     }
@@ -113,9 +115,11 @@ function gameOver() {
   modal.classList.add('show');
 }
 
-restart.addEventListener('click', function () {
-  location.reload();
-});
+restart.forEach(res => {
+  res.addEventListener('click', function () {
+    location.reload();
+  });
+}); 
 
 hint.addEventListener('click', function () {
   hintModal.classList.add('show');
@@ -133,24 +137,32 @@ function getRandomInt(max) {
 }
 
 
-let i = getRandomInt(word.length)+1;
+let i = 1;
 let j;
 do {
   j = getRandomInt(word.length)+1;
 } while (i == j);
 
-function hint1() {
+
+
+function hint2() {
   let randomHint = word[i-1];
   hintStmt.innerHTML = 'Letter ' + i + ' of the secret word is <span class="secret-word">'+ randomHint+ '</span>'; 
 }
+function hint1() {
+  hintStmt.innerHTML = 'The secret word is <span class="secret-word">'+ word.length+ '</span> characters long'; 
+}
 hint1();
-function hint2() {
+function hint3() {
   let randomHint = word[j-1];
   hintStmt.innerHTML = 'Letter ' + j + ' of the secret word is <span class="secret-word">'+ randomHint+ '</span>'; 
 }
 
-const left = document.querySelector('.left');
-const right = document.querySelector('.right');
 
-left.addEventListener('click', hint1);
-right.addEventListener('click', hint2);
+const firstHint = document.querySelector('.firstHint');
+const secondHint = document.querySelector('.secondHint');
+const thirdHint = document.querySelector('.thirdHint');
+
+firstHint.addEventListener('click', hint1);
+secondHint.addEventListener('click', hint2);
+thirdHint.addEventListener('click', hint3);

@@ -1,0 +1,9 @@
+img{
+    display: block;
+    border: 3px solid aqua;
+    padding: 10px;
+    margin: auto;
+}
+main p, h1{
+    text-justify: center;
+}
