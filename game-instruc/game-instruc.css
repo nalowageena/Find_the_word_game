@@ -2,7 +2,7 @@ img{
     display: block;
     border: 3px solid aqua;
     padding: 10px;
-    margin: auto;
+    margin: 15px auto;
     max-width: 200px;
 }
 main{
@@ -13,4 +13,9 @@ main{
 }
 main h1{
     text-align: center;
+    margin: 10px 0;
+}
+
+li{
+    margin: 20px 0;
 }
