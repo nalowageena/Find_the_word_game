@@ -19,7 +19,9 @@ const restart = document.querySelectorAll('.restart');
 
 const hint = document.querySelector('.hint');
 
-const hintStmt = document.querySelector('.hint-stmt')
+const hintStmt = document.querySelector('.hint-stmt');
+
+
 
 function findWord() {
   do {
@@ -51,12 +53,23 @@ function loadDefinition() {
   request.send();
 }
 
+function hint1() {
+  hintStmt.innerHTML = 'The secret word is <span class="secret-word">'+ word.length+ '</span> characters long'; 
+}
+
 function newWord() {
   word = findWord();
   loadDefinition();
+  hint1();
 }
 
 newWord();
+var i = 1;
+var j;
+do {
+  j = getRandomInt(word.length)+1;
+} while (j == 1);
+
 
 function changeInputStyle() {
   setTimeout(function () {
@@ -71,8 +84,6 @@ function changeInputStyle() {
 
 var noPoints = 0;
 function compareWord() {
-  // compare the word with the  secret word
-  // return a boolean
   if (word_space.value.toLowerCase() === word.toLowerCase()) {
     points.forEach(function (point) {
       point.textContent = parseInt(point.textContent) + 10;
@@ -132,27 +143,17 @@ window.onclick = function(event) {
   }
 }
 
+
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }
-
-
-let i = 1;
-let j;
-do {
-  j = getRandomInt(word.length)+1;
-} while (i == j);
-
 
 
 function hint2() {
   let randomHint = word[i-1];
   hintStmt.innerHTML = 'Letter ' + i + ' of the secret word is <span class="secret-word">'+ randomHint+ '</span>'; 
 }
-function hint1() {
-  hintStmt.innerHTML = 'The secret word is <span class="secret-word">'+ word.length+ '</span> characters long'; 
-}
-hint1();
+
 function hint3() {
   let randomHint = word[j-1];
   hintStmt.innerHTML = 'Letter ' + j + ' of the secret word is <span class="secret-word">'+ randomHint+ '</span>'; 
