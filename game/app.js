@@ -73,7 +73,7 @@ var noPoints = 0;
 function compareWord() {
   // compare the word with the  secret word
   // return a boolean
-  if (word_space.value === word) {
+  if (word_space.value.toLowerCase() === word.toLowerCase()) {
     points.forEach(function (point) {
       point.textContent = parseInt(point.textContent) + 10;
       noPoints = parseInt(point.textContent);
