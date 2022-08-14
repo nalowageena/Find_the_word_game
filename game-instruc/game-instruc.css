@@ -3,7 +3,14 @@ img{
     border: 3px solid aqua;
     padding: 10px;
     margin: auto;
+    max-width: 200px;
 }
-main p, h1{
-    text-justify: center;
+main{
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+main h1{
+    text-align: center;
 }
