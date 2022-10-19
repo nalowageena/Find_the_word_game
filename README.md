@@ -4,7 +4,7 @@ From the hints provided for you, guess the secret words to win coins!
 Do you wish to play Wordbie?
 
 <a href="https://wordiegame.netlify.app/index.html" target="_blank">
-<img src="https://img.shields.io/badge/Play-Wordbie-red?style=for-the-badge&logo=appveyor&colorB=black&logo=data:image/png;base64">
+<img src="https://img.shields.io/badge/Play-Wordbie-red?style=for-the-badge&logo=appveyor&colorB=black">
 </a>
 
 ## Tech stack:
@@ -59,9 +59,7 @@ The hint consists of another definition of the word and 3 other hints.
 
 <p align="center">
 <img src="./images/screenshot6.png" alt="" align="center">
-</p>
-
-
+</p> &nbsp;&nbsp;&nbsp;&nbsp;
 
 <p align="center">
  Made with :heart: by nalowa
